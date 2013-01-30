@@ -8,9 +8,7 @@ height: 270,
 width: 480
 });
 </script>
-
 <ul>
- <li onclick='jwplayer().play()'>Start the player</li>
- <li onclick='window.open ("/popup.html?position=" + jwplayer().getPosition(),"mywindow");jwplayer().play()'>Pop up</li>
-
+<li onclick='jwplayer().play()'>Start the player</li>
+<li><a href="http://173.45.255.44:4567/popup.html" onclick="javascript:void window.open('http://173.45.255.44:4567/popup.html' + jwplayer().getPosition(),'1359567328093','width=480,height=270,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=0,left=0,top=0');return false;">Pop-up Window</a></li>
 </ul>
