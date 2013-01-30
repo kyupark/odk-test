@@ -27,6 +27,7 @@ jwplayer().seek(qs["position"]);
 
 window.onbeforeunload = function () {
 	var now = jwplayer().getPosition();
-	window.opener.jwplayer().seek(now);
 	window.opener.jwplayer().play();}
+	window.opener.jwplayer().seek(now);
+
 </script>
