@@ -1,4 +1,10 @@
 <script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+
+<div id="container">Loading the player ...</div>
 ￼
-<video class="jwplayer" src="jwplayer/video.mp4"
-poster="jwplayer/preview.jpg"></video>
+<script type="text/javascript"> jwplayer("container").setup({
+flashplayer: "jwplayer/player.swf", file: "jwplayer/adk-36.mp4",
+height: 270,
+width: 480
+});
+</script>
