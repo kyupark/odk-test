@@ -24,4 +24,6 @@ var qs = (function(a) {
 })(window.location.search.substr(1).split('&'));
 
 jwplayer().seek(qs["position"]);
+
+window.opener.jwplayer().play();
 </script>
