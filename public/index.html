@@ -11,5 +11,6 @@ width: 480
 
 <ul>
  <li onclick='jwplayer().play()'>Start the player</li>
- <li onclick='alert(jwplayer().getPosition())'>Get current position</li>
+ <li onclick='window.open ("/popup.html?position=" + jwplayer().getPosition(),"mywindow");'>Pop up</li>
+
 </ul>
