@@ -21,7 +21,7 @@ var win = window.open('popup.html?position=60', 'popup','width=400,height=300,st
 var timer = setInterval(function() {   
 	if(win.closed) {  
 		clearInterval(timer);  
-		alert('closed');
+		alert(win.jwplayer().getPosition());
 		jwplayer().seek(win.jwplayer().getPosition());
 		jwplayer().play();
     }  
