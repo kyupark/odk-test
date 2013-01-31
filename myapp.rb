@@ -1,14 +1,22 @@
+require 'rubygems'
 require 'sinatra'
+require 'net/http'
 
 get '/' do
   File.read(File.join('public', 'index.html'))
 end
 
-get '/:filename' do
-  File.read(File.join('public', ':filename'))
+configure :production do
 end
 
-get '/videos/:filename' do
-  File.read(File.join('public', 'videos/:filename'))
+post '/ipn1' do
+  url       = params[:url]
+  raw_post  = request.env["rack.input"].read
+  res       = Net::HTTP.post_form(URI.parse(url), raw_post)
 end
 
+post '/ipn2' do
+  url = "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  body = request.body.string
+  RestClient.post url, body
+end
