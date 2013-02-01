@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'net/http'
-require 'rest_client'
+require 'rest-client'
 
 get '/' do
   File.read(File.join('public', 'index.html'))
