@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'sinatra'
-require 'net/http'
 require 'rest-client'
 
 get '/' do
@@ -10,18 +9,9 @@ end
 configure :production do
 end
 
-post '/ipn1' do
-  url       = params[:url]
-  raw_post  = request.env["rack.input"].read
-  res       = Net::HTTP.post_form(URI.parse(url), raw_post)
-  
-  
-end
-
-post '/ipn2' do
+post '/ipn' do
   url = "https://www.sandbox.paypal.com/cgi-bin/webscr"
   body = request.body.string
   RestClient.post url, body
-  
-  
+  File.open("ipn.txt", 'a') {|f| f.write(body) }
 end
